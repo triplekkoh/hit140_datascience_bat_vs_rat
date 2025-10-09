@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import filedialog
 import pandas as pd
 
-# Select Data set and Dataset 2
+# Select Dataset 1 and Dataset 2
 root = tk.Tk()
 root.withdraw()
 
@@ -79,3 +79,4 @@ if dataset2_path:
     if output_path:
         df_merged.to_csv(output_path, index=False)
         print(f"\nMerged dataset saved to: {output_path}")
+
