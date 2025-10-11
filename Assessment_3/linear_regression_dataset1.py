@@ -11,11 +11,11 @@ import statsmodels.api as sm
 from sklearn import metrics
 
 # Load the dataset
-df = pd.read_csv("dataset1.csv")
+df = pd.read_csv("dataset1_with_rat_duration.csv")
 
 # Define response variable and predictors
 response_var = 'bat_landing_to_food'
-predictor_vars = ['seconds_after_rat_arrival']
+predictor_vars = ['seconds_after_rat_arrival', 'risk', 'reward', 'rat_presence_duration_sec']
 
 print(f"\nResponse variable: {response_var}")
 print(f"Predictor variables: {predictor_vars}")

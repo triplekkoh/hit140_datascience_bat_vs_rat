@@ -11,11 +11,11 @@ import statsmodels.api as sm
 from sklearn import metrics
 
 # Load the dataset
-df = pd.read_csv("dataset2_with_rat_eating.csv")
+df = pd.read_csv("merged_dataset_with_rat_eating.csv")
 
 # Define response variable and predictors
 response_var = 'bat_landing_number'
-predictor_vars = ['food_availability', 'rat_minutes', 'rat_arrival_number', 'rat_eating']
+predictor_vars = ['seconds_after_rat_arrival', 'risk', 'reward', 'rat_minutes', 'bat_landing_to_food', 'food_availability', 'rat_eating', 'rat_arrival_number', 'rat_presence_duration_sec']
 
 print(f"\nResponse variable: {response_var}")
 print(f"Predictor variables: {predictor_vars}")
@@ -95,11 +95,12 @@ y_min = y_test.min()
 nrmse = rmse / (y_max - y_min)
 print('Normalized Root Mean Squared Error:', nrmse)
 
+
 # Plot linear regression line for each predictor variable
 fig, axes = plt.subplots(1, len(predictor_vars), figsize=(5 * len(predictor_vars), 5))
 if len(predictor_vars) == 1:
     axes = [axes]
-    
+
 for i, var in enumerate(predictor_vars):
     ax = axes[i]
     ax.scatter(data_clean[var], data_clean[response_var], alpha=0.6)
