@@ -86,7 +86,7 @@ def merge_datasets(df_dataset1, df_dataset2_expanded):
 
 def save_merged_dataset(df_merged):
     """Save the merged dataset with predefined filename"""
-    output_path = "merged_dataset_with_rat_eating.csv"
+    output_path = "merged_dataset.csv"
 
     try:
         df_merged.to_csv(output_path, index=False)

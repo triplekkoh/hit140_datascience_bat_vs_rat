@@ -3,7 +3,7 @@ from model_select import pick_for_script, print_ranking_table
 from linear_workflow import run_linear_workflow
 
 # Choose dataset + candidates
-dataset_path = "merged_dataset_with_rat_eating.csv"
+dataset_path = "merged_dataset.csv"
 response_var = "bat_landing_to_food"
 candidate_predictors = ['seconds_after_rat_arrival', 'risk', 'reward', 
                         'rat_minutes',
