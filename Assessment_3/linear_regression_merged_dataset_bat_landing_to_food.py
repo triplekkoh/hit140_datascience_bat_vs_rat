@@ -3,9 +3,13 @@ from model_select import pick_for_script, print_ranking_table
 from linear_workflow import run_linear_workflow
 
 # Choose dataset + candidates
-dataset_path = "dataset2_with_rat_eating.csv"
-response_var = "bat_landing_number"
-candidate_predictors = ['food_availability', 'rat_minutes', 'rat_arrival_number', 'rat_eating']
+dataset_path = "merged_dataset.csv"
+response_var = "bat_landing_to_food"
+candidate_predictors = ['seconds_after_rat_arrival', 'risk', 'reward', 
+                        'rat_minutes',
+                        'food_availability', 'rat_eating', 
+                        'rat_arrival_number', 
+                        'rat_presence_duration_sec']
 
 # Pick best subset by test R²
 response_var, predictor_vars, dataset_path, ranking = pick_for_script(
